@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
+                     validUntil="2020-11-11T12:26:32Z"
+                     cacheDuration="PT604800S"
+                     entityID="shell.softic.us">
+    <md:SPSSODescriptor AuthnRequestsSigned="false" WantAssertionsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+        <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>
+        <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+                                     Location="https://shell.softic.us/SamlConsume.aspx"
+                                     index="1" />
+        
+    </md:SPSSODescriptor>
+    <md:ContactPerson contactType="technical">
+        <md:GivenName>Haithem Nasr</md:GivenName>
+        <md:EmailAddress>nasr.haithem@softic.com.tn</md:EmailAddress>
+    </md:ContactPerson>
+</md:EntityDescriptor>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.25" name="DataLayerExperience">
+  <DataContextMoniker Name="/DataLayerExperienceDataContext" />
+  <nestedChildShapes>
+    <classShape Id="1a997fb9-c049-4732-a78b-005983e06727" absoluteBounds="5.625, 1.25, 2, 3.1170068359375">
+      <DataClassMoniker Name="/DataLayerExperienceDataContext/Entreprise" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a7b0fe2e-49de-49f7-8f15-94159e7b4864" absoluteBounds="5.64, 1.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f25f36e1-e841-47ad-8bfc-f09d99e5f3b8" absoluteBounds="1.875, 0.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DataLayerExperienceDataContext/Nomenclature_Contact" />
+      <nestedChildShapes>
+        <elementListCompartment Id="11e2d814-a507-4572-8f3b-e024191ab0c9" absoluteBounds="1.8899999999999997, 0.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="440774fa-2f1c-417f-a25c-9363838417b0" absoluteBounds="4.625, 4.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataLayerExperienceDataContext/Utilisateur" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4d7a9f06-446d-4c5e-a2c3-07bc6c9d69ce" absoluteBounds="4.64, 4.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c0a9fe19-8cef-461c-8d3d-5cdb0cfe9c03" absoluteBounds="2.375, 3.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataLayerExperienceDataContext/Attribut_Evenement" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ad7abc45-64f7-4ad4-9fd7-6d7ff600e2ad" absoluteBounds="2.3899999999999997, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f618aef1-7555-463b-b781-3b81aa03f04c" absoluteBounds="8.125, 5.875, 2, 3.1170068359375">
+      <DataClassMoniker Name="/DataLayerExperienceDataContext/Nomenclature_Evenement" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ae7a8b42-a869-4e72-9107-a79b9792dfa7" absoluteBounds="8.14, 6.335, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

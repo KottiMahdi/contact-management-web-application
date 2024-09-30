@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Erp" Class="DataLayerExperienceDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=EPPM-PR0392\SQLEXPRESS02;Initial Catalog=Erp;User ID=sa;Connect Timeout=200" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="RessourceConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Entreprise" Member="Entreprise">
+    <Type Name="Entreprise">
+      <Column Name="ID_Entreprise" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nom" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Téléphone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fax" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Adresse" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Adresse_2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Code_postal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ville" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Pays" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Site_internet" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ID_Groupe" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Etat" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Nomenclature_Contact" Member="Nomenclature_Contacts">
+    <Type Name="Nomenclature_Contact">
+      <Column Name="ID_Contact" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Civ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nom" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Prenom" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Téléphone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="E_mail" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ID_Fonction" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_Entreprise" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Suivi_par" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Utilisateur" Member="Utilisateur">
+    <Type Name="Utilisateur">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="users" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Attribut_Evenement" Member="Attribut_Evenement">
+    <Type Name="Attribut_Evenement">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Matricule" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_Evenement" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Nomenclature_Evenement" Member="Nomenclature_Evenement">
+    <Type Name="Nomenclature_Evenement">
+      <Column Name="ID_Evenement" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Contact" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_TypeEv" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Objet" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DateDebut" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Heure" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="DateFin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="HeureFin" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="Lieu" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DescriptionEv" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Attribue_a" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.CompteUtilisateur" Method="CompteUtilisateur">
+    <ElementType Name="CompteUtilisateurResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NomPrenom" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="login" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.InsertControleQualite" Method="InsertControleQualite">
+    <Parameter Name="CodeDocument" Parameter="codeDocument" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Designation" Parameter="designation" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Reference" Parameter="reference" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="RQEP" Parameter="rQEP" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="DPCPE" Parameter="dPCPE" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="DesignCoord" Parameter="designCoord" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="PC" Parameter="pC" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="EL" Parameter="eL" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="INS" Parameter="iNS" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="MEPP" Parameter="mEPP" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="CV" Parameter="cV" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="SF" Parameter="sF" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ISPC" Parameter="iSPC" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ISELPRJS" Parameter="iSELPRJS" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ISINSPRJS" Parameter="iSINSPRJS" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ISMEPPPRJS" Parameter="iSMEPPPRJS" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ISCVPRJS" Parameter="iSCVPRJS" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ISSFPRJS" Parameter="iSSFPRJS" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="PSLPC" Parameter="pSLPC" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="PSLEL" Parameter="pSLEL" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="PSLIN" Parameter="pSLIN" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="PSLMEPP" Parameter="pSLMEPP" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="PSLCV" Parameter="pSLCV" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="PSLSF" Parameter="pSLSF" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="CLIENT" Parameter="cLIENT" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Observation" Parameter="observation" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertDocumentEtude" Method="InsertDocumentEtude">
+    <Parameter Name="Reference" Parameter="reference" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="CodeDocument" Parameter="codeDocument" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="TitreDocument" Parameter="titreDocument" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Rev" Parameter="rev" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Avancement" Parameter="avancement" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="EmissionPlanifiee" Parameter="emissionPlanifiee" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ApprobationPanifiee" Parameter="approbationPanifiee" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Poids" Parameter="poids" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Ponderation" Parameter="ponderation" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="NBHIngenieur" Parameter="nBHIngenieur" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="NBHProjeteur" Parameter="nBHProjeteur" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Etat" Parameter="etat" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertDocEtudeETQualiteProjet" Method="InsertDocEtudeETQualiteProjet">
+    <Parameter Name="Matricume" Parameter="matricume" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="NewCodeDocument" Parameter="newCodeDocument" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="OldCodeDocument" Parameter="oldCodeDocument" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="NewReference" Parameter="newReference" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertDetailProjet" Method="insertDetailProjet">
+    <Parameter Name="reference" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="idclient" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="idphace" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="idTypeProjet" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="taskforce" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="idclasseProjet" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Revision" Parameter="revision" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="DD" Parameter="dD" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="DF" Parameter="dF" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="RemarqClient" Parameter="remarqClient" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="RemarqProjet" Parameter="remarqProjet" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.updatDetailProjet" Method="updatDetailProjet">
+    <Parameter Name="reference" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="idclient" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="idphace" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="idTypeProjet" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="taskforce" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="idclasseProjet" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Revision" Parameter="revision" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="DD" Parameter="dD" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="DF" Parameter="dF" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="RemarqClient" Parameter="remarqClient" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="RemarqProjet" Parameter="remarqProjet" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetDetailProjet" Method="GetDetailProjet">
+    <Parameter Name="Ref" Parameter="ref" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="GetDetailProjetResult">
+      <Column Name="reference" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="taskforce" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Client" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Classe" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Phase" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Revision" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DD" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DF" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RemarqClient" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RemarqProjet" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetAdminByMatricule" Method="GetAdminByMatricule">
+    <Parameter Name="Matricule" Parameter="matricule" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="GetAdminByMatriculeResult">
+      <Column Name="Matricule" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreatedByUserID" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="CreatedOnDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.InsertPermissionInterfaceByProj" Method="InsertPermissionInterfaceByProj">
+    <Parameter Name="reference" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Matriculen" Parameter="matriculen" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertMachineIP" Method="InsertMachineIP">
+    <Parameter Name="MachineAlias" Parameter="machineAlias" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="MachineNom" Parameter="machineNom" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="MachineReference" Parameter="machineReference" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="IP" Parameter="iP" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Port" Parameter="port" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Enabled" Parameter="enabled" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Administrateur" Parameter="administrateur" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetMachine" Method="GetMachine">
+    <ElementType Name="GetMachineResult">
+      <Column Name="device_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MachineAlias" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IP" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Port" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetMaxDate" Method="GetMaxDate">
+    <Parameter Name="MachineNumber" Parameter="machineNumber" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetMaxDateResult">
+      <Column Name="DateTimeRecord" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Insert_Contact" Method="Insert_Contact">
+    <Parameter Name="ID_Civ" Parameter="iD_Civ" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nom" Parameter="nom" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Prenom" Parameter="prenom" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Telephone" Parameter="telephone" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Mobile" Parameter="mobile" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="E_mail" Parameter="e_mail" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ID_Fonction" Parameter="iD_Fonction" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_Entreprise" Parameter="iD_Entreprise" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Suivi_par" Parameter="suivi_par" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertEntreprise" Method="InsertEntreprise">
+    <Parameter Name="Nom" Parameter="nom" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Telephone" Parameter="telephone" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Fax" Parameter="fax" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Adresse" Parameter="adresse" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Adresse_2" Parameter="adresse_2" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Code_postal" Parameter="code_postal" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Ville" Parameter="ville" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Pays" Parameter="pays" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Site_internet" Parameter="site_internet" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ID_Groupe" Parameter="iD_Groupe" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Etat" Parameter="etat" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateEntreprise" Method="UpdateEntreprise">
+    <Parameter Name="ID_Entreprise" Parameter="iD_Entreprise" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nom" Parameter="nom" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Telephone" Parameter="telephone" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Fax" Parameter="fax" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Adresse" Parameter="adresse" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Adresse_2" Parameter="adresse_2" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Code_postal" Parameter="code_postal" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Ville" Parameter="ville" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Pays" Parameter="pays" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Site_internet" Parameter="site_internet" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ID_Groupe" Parameter="iD_Groupe" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Etat" Parameter="etat" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetDetailEntreprise" Method="GetDetailEntreprise">
+    <Parameter Name="ID_Entreprise" Parameter="iD_Entreprise" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetDetailEntrepriseResult">
+      <Column Name="ID_Entreprise" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nom" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Telephone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fax" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Adresse" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Adresse_2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Code_postal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ville" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Pays" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Site_internet" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Etat" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Groupe" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ID_Etat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_Groupe" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetContact" Method="GetContact">
+    <Parameter Name="ID_Entreprise" Parameter="iD_Entreprise" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetContactResult">
+      <Column Name="ID_Contact" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Civ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nom" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Prenom" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Telephone" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="E_mail" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ID_Fonction" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_Entreprise" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Suivi_par" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.DeleteEntreprise" Method="DeleteEntreprise">
+    <Parameter Name="ID_Entreprise" Parameter="iD_Entreprise" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DeleteContact_byIDEntreprise" Method="DeleteContact_byIDEntreprise">
+    <Parameter Name="ID_Entreprise" Parameter="iD_Entreprise" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertNomenclature_Evenement" Method="insertNomenclature_Evenement">
+    <Parameter Name="ID_TypeEv" Parameter="iD_TypeEv" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Objet" Parameter="objet" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="DateDebut" Parameter="dateDebut" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Heure" Parameter="heure" Type="System.TimeSpan" DbType="Time" />
+    <Parameter Name="DateFin" Parameter="dateFin" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="HeureFin" Parameter="heureFin" Type="System.TimeSpan" DbType="Time" />
+    <Parameter Name="Lieu" Parameter="lieu" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="DescriptionEv" Parameter="descriptionEv" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ID_Contact" Parameter="iD_Contact" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetUtilisateurByEmail" Method="GetUtilisateurByEmail">
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="password" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="GetUtilisateurByEmailResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="users" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetUtilisateur" Method="GetUtilisateur">
+    <ElementType Name="GetUtilisateurResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="users" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
